@@ -648,45 +648,44 @@ public class EcDef extends Exception{
 ###Directory structure：
 ### com.project3.domain:
 
-+ #####  [Architect.java](..\..\E for JAVA EE\test\src\com\project3\domain\Architect.java) 
++ #####  [Architect.java]
 
-+ #####  [package-info.java](..\..\E for JAVA EE\test\src\com\project3\domain\package-info.java) 
++ #####  [package-info.java]
 
-+ #####  [PC.java](..\..\E for JAVA EE\test\src\com\project3\domain\PC.java) 
++ #####  [PC.java]
 
-+ #####  [Printer.java](..\..\E for JAVA EE\test\src\com\project3\domain\Printer.java) 
++ #####  [Printer.java]
 
-+ #####  [Programmer.java](..\..\E for JAVA EE\test\src\com\project3\domain\Programmer.java) 
++ #####  [Programmer.java]
 
-+ #####  [Designer.java](..\..\E for JAVA EE\test\src\com\project3\domain\Designer.java) 
++ #####  [Designer.java]
 
-+ #####  [Employee.java](..\..\E for JAVA EE\test\src\com\project3\domain\Employee.java) 
++ #####  [Employee.java]
 
-+ #####  [Equipment.java](..\..\E for JAVA EE\test\src\com\project3\domain\Equipment.java) 
++ #####  [Equipment.java]
 
-+ #####  [NoteBook.java](..\..\E for JAVA EE\test\src\com\project3\domain\NoteBook.java) 
++ #####  [NoteBook.java]
 
 ### com.project3.junit：
 
-+ #####  [NameListServiceTest.java](..\..\E for JAVA EE\test\src\com\project3\junit\NameListServiceTest.java) 
-
-+ #####  [package-info.java](..\..\E for JAVA EE\test\src\com\project3\junit\package-info.java) 
++ #####  [NameListServiceTest.java]
++ #####  [package-info.java]
 
 ### com.project3.service:
 
-+ #####  [NameListService.java](..\..\E for JAVA EE\test\src\com\project3\service\NameListService.java) 
++ #####  [NameListService.java]
 
-+ #####  [Status.java](..\..\E for JAVA EE\test\src\com\project3\service\Status.java) 
++ #####  [Status.java]
 
-+ #####  [TeamException.java](..\..\E for JAVA EE\test\src\com\project3\service\TeamException.java) 
++ #####  [TeamException.java] 
 
-+ #####  [TeamService.java](..\..\E for JAVA EE\test\src\com\project3\service\TeamService.java) 
++ #####  [TeamService.java] 
 
-+ #####  [Data.java](..\..\E for JAVA EE\test\src\com\project3\service\Data.java) 
++ #####  [Data.java]
 
 ### com.project3.view:
 
-+ #####  [TeamView.java](..\..\E for JAVA EE\test\src\com\project3\view\TeamView.java) 
++ #####  [TeamView.java]
 
-+ #####  [TSUtility.java](..\..\E for JAVA EE\test\src\com\project3\view\TSUtility.java) 
++ #####  [TSUtility.java]
 
