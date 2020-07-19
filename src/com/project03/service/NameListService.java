@@ -1,8 +1,4 @@
 package com.project03.service;
-/**
- * @author RRW friend_rrw@163.com
- * @create 2020-07-18-18:00
- */
 
 import com.project03.domain.PC;
 import com.project03.domain.*;
@@ -16,20 +12,19 @@ import static com.project03.service.Data.*;
  */
 public class NameListService {
     private Employee[] employees;
-    public NameListService() {
+    public NameListService() {//构造器
         //给employees初始化
 //		1.根据项目提供的Data类构建相应大小的employees数组
 //		2.再根据Data类中的数据构建不同的对象，包括Employee、Programmer、Designer和Architect对象，以及相关联的Equipment子类的对象
 //		3.将对象存于数组中
-        employees = new Employee[Data.EMPLOYEES.length];
-        for (int i = 0; i < employees.length; i++){
+        employees = new Employee[EMPLOYEES.length];
+        for (int i = 0; i < employees.length; i++) {
             int type = Integer.parseInt(EMPLOYEES[i][0]);
-
-            //获取Employee的四个基本信息：
             int id = Integer.parseInt(EMPLOYEES[i][1]);
             String name = EMPLOYEES[i][2];
             int age = Integer.parseInt(EMPLOYEES[i][3]);
             double salary = Double.parseDouble(EMPLOYEES[i][4]);
+
             Equipment equipment;
             double bounus;
             int stock;
@@ -55,28 +50,40 @@ public class NameListService {
             }
         }
     }
-
-    private  Equipment creatEquipment(int index){
-        int type = Integer.parseInt(EQIPMENTS [index][0]);
-        switch (type){
+    private Equipment creatEquipment(int index) {
+        int type = Integer.parseInt(EQIPMENTS[index][0]);
+        switch (type) {
             case PC:
                 return new PC(EQIPMENTS[index][1],EQIPMENTS[index][2]);
             case NOTEBOOK:
                 double price = Double.parseDouble(EQIPMENTS[index][2]);
-                return new NoteBook(EQIPMENTS[index][1],price);//EQIPMENTS[index][2]需要转换
+                return new NoteBook(EQIPMENTS[index][1],price);
             case PRINTER:
                 return new Printer(EQIPMENTS[index][1],EQIPMENTS[index][2]);
         }
         return null;
     }
 
-    public Employee[] getEmployees(){   //获取当前所有员工；
+    public Employee[] getEmployees(){
         return employees;
     }
-    public Employee getEmployee(int id) throws TeamException{
+
+    public Employee getEmployee(int id) throws TeamException {
         for (Employee e : employees){
-            if (e.getId() == id) return e;
-        }
-        throw new TeamException("该员工不存在！");
+            if (e.getId() == id){
+                return e;
+            }
+        } throw new TeamException("该成员不存在");
     }
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -16,38 +16,35 @@ public class TeamView {
     private TeamService teamService = new TeamService();
 
     public void enterMainMenu(){
-        boolean loopFlag = true;
         char key = 0;
+        boolean loopFlag = true;
         /*
         对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。
         do…while 循环和 while 循环相似，不同的是，do…while 循环至少会执行一次。
          */
-        do{
-            if (key != '1'){
-                listAllEmployees();
-            }
-            System.out.println("1-团队列表  2-添加团队成员  3-删除团队成员 4-退出   请选择(1-4)：");
-            key = TSUtility.readMenuSelection();
-            System.out.println();
-            switch (key){
-                case '1':
-                    listTeam();
-                    break;
-                case '2':
-                    addMember();
-                    break;
-                case '3':
-                    deleteMember();
-                    break;
-                case '4':
-                    System.out.println("确认退出？（Y/N）");
-                    char yn = TSUtility.readConfirmSelection();
-                    if (yn == 'Y'){
-                        loopFlag = false;
-                        break;
-                    }
-            }
-        }while (loopFlag);
+       do {
+           if (key != '1')  listAllEmployees();
+               System.out.println("1-团队列表  2-添加团队成员  3-删除团队成员 4-退出   请选择(1-4)：");
+               key = TSUtility.readMenuSelection();
+           System.out.println();
+           switch (key){
+               case '1':
+                   listTeam();
+                   break;
+               case '2':
+                   addMember();
+                   break;
+               case '3':
+                   deleteMember();
+                   break;
+               case '4':
+                   System.out.println("是否退出？(Y/N)");
+                   char yn = TSUtility.readConfirmSelection();
+                   if (yn == 'Y')
+                       loopFlag = false;
+                       break;
+           }
+       }while (loopFlag);
     }
 
     //显示所有成员信息:
