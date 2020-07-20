@@ -13,7 +13,7 @@ package Senior.RRW.Thread;
  * * setName():创建当前线程的名字；
  * 4.yield():释放执行权；
  * 5.join():A线程调用的B线程的join()方法，使A阻塞
- * B线程先执行完毕，A线程阻塞状态技术，才继续执行；
+ *          B线程先执行完毕，A线程阻塞状态技术，才继续执行；
  * 6.stop():强制结束当前线程，已经out了，不推荐使用；
  * 7.sleep():使当前线程进入sleep(一段时间的阻塞状态)
  * 8.isAlive():判断当前线程是否存活；
@@ -46,7 +46,7 @@ class test01Thread extends Thread {
 //                    e.printStackTrace();
 //                }
 //            }
-        }
+            }
         }
     }
 

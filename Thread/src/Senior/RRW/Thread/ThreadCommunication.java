@@ -36,7 +36,8 @@ class NUMber implements Runnable{
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
+                //即，通过唤醒一个线程，执行打印任务，再让其进入等待，让下一个线程
+                    //进来执行任务，进入等待...即可实现题目要求
                 }else{
                     break;
                 }

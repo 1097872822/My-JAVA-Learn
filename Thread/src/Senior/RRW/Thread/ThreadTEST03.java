@@ -2,14 +2,14 @@ package Senior.RRW.Thread;
 /**
  * @description:
  *     线程创建方式二：
- *         eg：搞三个地毯摆摊赚钱，卖100串肉串；
+ *         eg：搞三个地毯摆摊赚钱，卖肉串；
  * @author: RRW friend_rrw@163.com
  * @create: 2020-06-05 23:13
  */
 
 class Stalls extends Thread { //继承方式；
     private static int Kebabs = 500;//500串肉串；
-    // 可能会出现重，因为存在线程安全问题，待解决
+    // 可能会出现重串，因为存在线程安全问题，待解决
 //    private static Object obj = new Object();
     @Override
     public void run() {

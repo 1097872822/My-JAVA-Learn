@@ -16,7 +16,7 @@ import java.util.concurrent.FutureTask;
 //1、创建一个实现Callable的实现类：
 class CallableThread implements Callable{
     //2、实现call()方法，将此线程需要执行的操作声明在call()中
-    @Override
+    @Override //Callable实现类 重写的call()
     public Object call() throws Exception {  //call():回调方法
         //这里涉及包装Integer，方法是Object类的返回，而下面return sum；是int型的,多态形式了；
         int sum = 0;
@@ -34,7 +34,7 @@ public class CallableTest {
     public static void main(String[] args) {
         //3、创建callable接口实现类的对象：
         CallableThread C1 = new CallableThread();
-        //4、将此callable接口实现类的UI想走位传递到FutureTask构造器中，创建FutrueTask的对象；
+        //4、将此callable接口实现类的对象传递到FutureTask构造器中，创建FutrueTask的对象；
         FutureTask futureTask = new FutureTask(C1);
         //创建线程：
         //5、将FutrueTask的对象作为参数传递到Thread类的构造器中，创建Thread类对象，调用start();

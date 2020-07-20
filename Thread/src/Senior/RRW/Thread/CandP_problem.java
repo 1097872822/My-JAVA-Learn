@@ -1,15 +1,15 @@
 package Senior.RRW.Thread;
 
 /**
- *@description:
+ *@description: 生产者 生产 与 消费者 消费的冲突问题
  *@author: RRW friend_rrw@163.com
  *@create: 2020-06-07 18:06
  */
 
 class Shop{
     private int productNum = 0;
-    public synchronized void shengchan() {
-        if (productNum < 20){
+    public synchronized void shengchan() { //生产同步方法
+        if (productNum < 20){   //产品小于20 就继续生产
             productNum++;
             System.out.println(Thread.currentThread().getName()+
                     "开始生产第："+ productNum+ "个产品");
@@ -24,12 +24,12 @@ class Shop{
         }
     }
 
-    public synchronized void qianggou() {
+    public synchronized void qianggou() { //抢购同步方法
         if (productNum > 0){
             System.out.println(Thread.currentThread().getName()+
                     "开始抢购第："+ productNum+ "个产品");
             productNum--;
-            notify();
+            notify(); //一个线程抢一次
         }else {
             //等待
             try {

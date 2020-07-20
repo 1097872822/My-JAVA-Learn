@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- *@description: 创建线程的方式四： 使用线程池；
+ *@description: 创建线程的方式四： 使用线程池 且你会发现贼快；
  *@author: RRW friend_rrw@163.com
  *@create: 2020-06-07 21:50
  */

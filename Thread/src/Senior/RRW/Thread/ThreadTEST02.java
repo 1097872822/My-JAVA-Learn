@@ -6,8 +6,8 @@ package Senior.RRW.Thread;
 
 /**
  * @description: 创建两个线程：
- * 1.一个线程遍历50以内的奇数；
- * 2.一个线程遍历50以内的偶数；
+ *      1.一个线程遍历50以内的奇数；
+ *      2.一个线程遍历50以内的偶数；
  * @author: RRW friend_rrw@163.com
  * @create: 2020-06-05 21:01
  */

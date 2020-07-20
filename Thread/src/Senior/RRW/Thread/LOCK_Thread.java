@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @description: 解决线程安全方式三: LOCK锁
  *                  synchronized 与 lock：
- *                      区别： synchronized是在执行完同步代码后悔自动释放同步监视器；
+ *                      区别： synchronized是在执行完同步代码后会自动释放同步监视器；
  *                            lock则需要手动 lock.lock();-----lock.unlock();
  * @author: RRW friend_rrw@163.com
  * @create: 2020-06-07 00:38
@@ -15,7 +15,7 @@ class stalls implements Runnable {
     //1.实例化 ReentrantLock
     private ReentrantLock lock = new ReentrantLock(true);
     // ctrl + alt + / 参数提示快捷键
-    //"fair:true" ： 是否公平，不写就是不公平的；先进先出，先来先得
+    //"fair:true" ： 是否公平，不写就是不公平的；true则为先进先出，先来先得
     //LOCK本身是一个接口，具体使用的是它的子类ReentrantLock；
 
     private int Kebabs = 100; //继续卖羊肉串

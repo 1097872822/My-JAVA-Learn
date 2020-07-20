@@ -25,6 +25,7 @@ public class ThreadTEST {
                     ":" + "我是主线程");
         }
         System.out.println(Thread.currentThread().getName()+"OMG");//主线程继续执行着，输出这条语句；
+        //Thread.currentThread().getName() 获取当前 线程的线程名
     }
 }
 
@@ -34,7 +35,8 @@ class MThread extends Thread{
         //线程操作：
         for (int i = 0; i < 50; i++) {
             if (i % 2 == 0){
-                System.out.println(Thread.currentThread().getName()+"-"+i + " ");
+                System.out.println(
+                        Thread.currentThread().getName()+"-"+i + " ");
             }
         }
     }

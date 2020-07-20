@@ -9,11 +9,13 @@ class Account {
     public Account(double balance) {
         this.balance = balance;
     }
-    //存钱方法：
-        public synchronized void deposit ( double money){
+    //存钱方法：（同步方法）
+    //如果把synchronized去掉，就会出现下面的存钱冲突问题
+        public synchronized void deposit (double money){
             if (money > 0) {
                 balance += money;
-                try { //在这加了sleep()，极大可能就会出现两个人都往里面存了钱，
+                try {
+                    //在这加了sleep()，极大可能就会出现两个人都往里面存了钱，
                     //但一个人存钱成功之后会多了1000;那是因为这条线程睡了1s，
                     //后面的进来存了，它醒来才发现我就存1000，怎么多了1000？
                     Thread.sleep(1000);
