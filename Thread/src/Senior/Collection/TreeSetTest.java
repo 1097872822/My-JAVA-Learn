@@ -42,14 +42,34 @@ public class TreeSetTest {
     //定制排序(与compator相关):
     @Test
     public void test2(){
-        Comparator com = new Comparator() {
+
+        /*
+       Comparable接口 & Comparator比较器接口：
+          1.实现Comparable接口，重写compareTo方法；
+          2.Comparator比较器接口，重写compare方法;
+
+          Comparable接口:
+            public int compareTo(T obj);通过 x.compareTo(y)来比较x和y的大小
+          Comparator比较器:
+            1.作用和Comparable类似;
+            2. TreeSet 和 TreeMap的数据结构底层也是使用Comparator来实现。
+            3.不同于Comparable ，比较器可以任选地允许比较null参数，同时保持要求等价关系。
+            4.比较形式：int compare(T obj1, T obj2);
+
+          两者区别：
+            1.Comparable接口和类的耦合性高。就是说一个类实现了Comparable 接口，重写了compareTo()方法，那么它就可以被排序；
+            2.使用Comparator接口；通过建立一个“该类的比较器”来进行排序（其实也是重新写一个类，这个类实现了Comparator接口，重写了compare()方法。
+            3.compareTo（）不接受null作为入参，compare()可以接受null作为入参，但要求保持等价关系;
+        */
+
+        Comparator com = new Comparator() {  //比较其两个参数的顺序。 返回-+整数/0;
             //按年龄从小到大排：
-            @Override
+            @Override  //重写compare方法：
             public int compare(Object o1, Object o2) {
                 if (o1 instanceof People && o2 instanceof People){
                     People p1 = (People) o1;
                     People p2 = (People) o2;
-                    return Integer.compare(p1.getAge(),p2.getAge()) ;
+                    return Integer.compare(p1.getAge(),p2.getAge());
                 }else {
                     throw new RuntimeException("类型不匹配");
                 }

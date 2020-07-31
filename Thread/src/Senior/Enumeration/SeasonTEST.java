@@ -10,6 +10,12 @@ public class SeasonTEST {
     public static void main(String[] args) {
         Season winter = Season.WINTER;
         System.out.println(winter);
+        Season spring = Season.SPRING;
+        System.out.println(spring);
+        Season autumn = Season.AUTUMN;
+        System.out.println(autumn);
+        Season summer = Season.SUMMER;
+        System.out.println(summer);
     }
 }
 class Season{

@@ -32,7 +32,8 @@ public class InterviewTEST {
         set.add(new People("CC",22));
         System.out.println(set);
         //而上面这俩句，原本找不到的删除数据，我new了，所以CC，22是存在的；这个跟是否重写hashCode还是有出入的
-                //因为之前改名为CC后的位置是用name1的哈希值算出来的，所以输出三个数据；
+        //因为之前改名为CC后的位置是用name1的哈希值算出来的，所以输出三个数据；
+        //并且我们说，set里是不可以有重复的数据的，但这里的数据非“相同”，而是hashCode的值不同的数据；
         //[People{name='CC', age=22}, People{name='name2', age=42}, People{name='CC', age=22}]
         set.add(new People("name1",22));
         System.out.println(set);
