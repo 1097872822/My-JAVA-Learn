@@ -1,10 +1,5 @@
 package Senior.Generic;
 /**
- * @author RRW friend_rrw@163.com
- * @create 2020-06-15-16:08
- */
-
-/**
  *@description:
  *@author: RRW friend_rrw@163.com
  *@create: 2020-06-15 16:08

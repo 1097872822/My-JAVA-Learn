@@ -28,15 +28,15 @@ public class FileReaderWriterTEST {
             //注意异常处理，不要在方法直接抛Exception，为保证流资源可以close()，需要try-catch-finally处理；
     public void test1()  {
         //实例化对象
-        FileReader f = null;
+        FileReader f = null; //注意这里不是一上来就给 f 设空哈，而是try/catch的结果
         try {
             File file1 = new File("hello.txt");
             //提供具体流：
             f = new FileReader(file1);
             //数据读入
-            int date;
+            int date;  //why int ？ Because：目的是读到文件末尾(-1)
             while ((date = f.read()) != -1){  //这里read一个一个读
-                System.out.println((char) date);
+                System.out.print((char) date);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -69,7 +69,7 @@ public class FileReaderWriterTEST {
 //                }
                 //或者用下面方式代替for循环，会更“国际化”，for很low的
                 String str = new String(cbuf,0,len);//从0位置开始，每次读len个
-                System.out.print(str);
+                System.out.println(str);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -85,10 +85,10 @@ public class FileReaderWriterTEST {
     }
     @Test //从内存写出数据到指定文件中
     public void test3(){
-        FileWriter f = null;//不在源文件上追加，true反之
+        FileWriter f = null;
         try {
             File file = new File("hello2.txt");
-            f = new FileWriter(file,false);
+            f = new FileWriter(file,false);//再次运行不再源文件上追加，true反之
             f.write("I am rrw");//再写一次(再执行)，就看上面F还是T了
         } catch (IOException e) {
             e.printStackTrace();
@@ -114,6 +114,7 @@ public class FileReaderWriterTEST {
             int len;
             while ((len = fr.read(cbuf)) != -1){
                 fw.write(cbuf,0,len);
+                System.out.println();
             }
         } catch (IOException e) {
             e.printStackTrace();

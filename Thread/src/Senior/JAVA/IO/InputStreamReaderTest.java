@@ -6,11 +6,11 @@ import java.io.*;
 
 /**
  *@description:  转换流(属字符流)：
- *             1.InputStreamReader 字节的输入流 ————>字符的输入流
- *             2.OutputStreamWriter 字符的输出流 ————> 字节的输出流
+ *             1.InputStreamReader 字节的输入流 ————>字符的输入流：即InputStream——>Reader
+ *             2.OutputStreamWriter 字符的输出流 ————> 字节的输出流：即Writer——>OutputStream
  *              提供 字节与字符之间的转换；
- *            编码：字符串字节数组
- *            解码：字节数组字符串
+ *            编码：字符串字节数组：即给程序看
+ *            解码：字节数组字符串：即给程序员看
  *     转换流的编码应用   可以将字符按指定编码格式存储
  *                   可以对文本数据按指定编码格式来解读
  *                   指定编码表的动作由构造器完成

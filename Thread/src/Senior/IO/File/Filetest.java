@@ -17,7 +17,7 @@ public class Filetest {
     @Test  //创建File类的实例化：
     public void test1(){
         File file1 = new File("hello.txt");//相对路径
-        File file2 = new File("D:\\E for JAVA EE\\SeniorForJava_IJ\\Thread");//绝对路径
+        File file2 = new File("D:\\E for JAVA EE\\SeniorForJava_IJ\\Thread\\hello.txt");//绝对路径
         System.out.println(file1);
         System.out.println(file2);
     }
@@ -28,17 +28,18 @@ public class Filetest {
         System.out.println(file1.getAbsoluteFile());//完整路径
         System.out.println(file1.getName());//文件名
         System.out.println(file1.getParent());//上层目录,写相对路径是null
+        System.out.println(file2.getParent());//上层目录
         System.out.println(file1.length());//长度
         System.out.println(new Date(file1.lastModified()));//最后一次更改时间
         System.out.println();
         String[] list = file2.list();
         for (String s : list){
-            System.out.println(s);
+            System.out.println(s);   //输出目录下的文件
         }
         System.out.println();
         File[] list1 = file2.listFiles();
         for (File f : list1){
-            System.out.println(f);
+            System.out.println(f);  //输出目录下的文件(带路径)
         }
     }
     @Test //判断功能：

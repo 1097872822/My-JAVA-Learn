@@ -15,6 +15,7 @@ public class GenericTEST1 {
     public void test(){
         OrderforTEST2<String> str = new OrderforTEST2<String>("abc",11,"ABC");
         str.setOrderT("RRW");
+        System.out.println(str);
     }
 
     @Test
@@ -23,6 +24,7 @@ public class GenericTEST1 {
         subOrder.setOrderT(123); //class SubOrder中指明了Integer
         SubOrder1<String> objectSubOrder1 = new SubOrder1<>();//就可以指明类型<String>
         objectSubOrder1.setOrderT("123");
+        System.out.println(objectSubOrder1);
     }
     @Test //泛型不同不能相互赋值
     public void test2(){

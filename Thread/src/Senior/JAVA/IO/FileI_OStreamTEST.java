@@ -31,7 +31,7 @@ public class FileI_OStreamTEST {
             while ((len = Sr.read(buf))!= -1){
                 De.write(buf,0,len);
             }
-            System.out.println("Success！");
+            System.out.println("Copy Success！");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

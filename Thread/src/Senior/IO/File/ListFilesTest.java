@@ -16,8 +16,15 @@ public class ListFilesTest {
 		/** 打印出指定目录所有文件名称，包括子文件目录中的文件 */
 		// 1.创建目录对象
 		File dir = new File("D:\\E for JAVA EE\\SeniorForJava_IJ\\Thread");
+		File file = new File("D:\\E for JAVA EE\\SeniorForJava_IJ\\Thread");
 		// 2.打印目录的子文件
 		printSubFile(dir);
+		System.out.println();
+		listSubFiles(file);
+		System.out.println();
+		listAllSubFiles(file);
+		System.out.println();
+		getDirectorySize(file);
 	}
 
 	public static void printSubFile(File dir) {
@@ -27,7 +34,7 @@ public class ListFilesTest {
 			if (f.isDirectory()) {// 文件目录
 				printSubFile(f);
 			} else {// 文件
-				System.out.println(f.getAbsolutePath());
+				System.out.println(f.getAbsolutePath());  //完整路径
 			}
 		}
 	}
@@ -35,20 +42,20 @@ public class ListFilesTest {
 	// 方式二：循环实现
 	// 列出file目录的下级内容，仅列出一级的话
 	// 使用File类的String[] list()比较简单
-	public void listSubFiles(File file) {
+	public static void listSubFiles(File file) {
 		if (file.isDirectory()) {
 			String[] all = file.list();
 			for (String s : all) {
 				System.out.println(s);
 			}
 		} else {
-			System.out.println(file + "是文件！");
+			System.out.println(file + "不是文件！");
 		}
 	}
 
 	// 列出file目录的下级，如果它的下级还是目录，接着列出下级的下级，依次类推
 	// 建议使用File类的File[] listFiles()
-	public void listAllSubFiles(File file) {
+	public static void listAllSubFiles(File file) {
 		if (file.isFile()) {
 			System.out.println(file);
 		} else {
@@ -63,7 +70,7 @@ public class ListFilesTest {
 
 	// 拓展1：求指定目录所在空间的大小
 	// 求任意一个目录的总大小
-	public long getDirectorySize(File file) {
+	public static long getDirectorySize(File file) {
 		// file是文件，那么直接返回file.length()
 		// file是目录，把它的下一级的所有大小加起来就是它的总大小
 		long size = 0;
@@ -75,6 +82,7 @@ public class ListFilesTest {
 			for (File f : all) {
 				size += getDirectorySize(f);// f的大小;
 			}
+			System.out.println(size);
 		}
 		return size;
 	}

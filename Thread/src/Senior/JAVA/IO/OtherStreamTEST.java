@@ -11,11 +11,11 @@ import java.io.InputStreamReader;
  *                  数据流有两个类：(用于读取和写出基本数据类型、String类的数据）
  *                       DataInputStream 和 DataOutputStream
  *                       分别“套接”在 InputStream 和 OutputStream 子类的流上
- *          对象流： 用于存储和读取基本数据类型数据或对象的处理流。
+ *          对象流（高层次的数据流）： 用于存储和读取基本数据类型数据或对象的处理流。
  *                   它的强大之处就是可以把Java中的对象写入到数据源中，
  *                   也能把对象从数据源中还原回来。
- *                ● 序列化：用ObjectOutputStream类保存基本类型数据或对象的机制
- *                ● 反序列化：用ObjectInputStream类读取基本类型数据或对象的机制
+ *                ● 序列化：用ObjectOutputStream类 保存 基本类型数据或对象的机制
+ *                ● 反序列化：用ObjectInputStream类 读取 基本类型数据或对象的机制
  *                ● ObjectOutputStream和ObjectInputStream不能序列化static和transient修 饰的成员变量
  *@author: RRW friend_rrw@163.com
  *@create: 2020-06-21 13:06
@@ -25,18 +25,21 @@ public class OtherStreamTEST {
     public static void main(String[] args) {
         BufferedReader reader = null;
         try {
+            //处理流
             InputStreamReader Input = new InputStreamReader(System.in);
+            //缓冲流
             reader = new BufferedReader(Input);
             while (true) {
                 System.out.println("请输入字符串：");
                 String data = reader.readLine();
                 if ("exit".equalsIgnoreCase(data)) {
+                    //equalsIgnoreCase() 方法用于将字符串与指定的对象比较，不考虑大小写。
                     break;
                 }
                 String upcase = data.toUpperCase();
                 System.out.println(upcase);
             }
-        } catch (IOException e) {
+                    } catch (IOException e) {
             e.printStackTrace();
         } finally {
             if (reader != null) {

@@ -7,7 +7,7 @@ import java.io.*;
 /**
  *@description:  缓冲流 ： 提高读写速度的流；
  *      因其内部定义了一个缓冲区，数据先会给操作的文件缓存，再一次性输出
- *      8倍的1024 “DEFAULT_BUFFER_SIZE = 8192;”
+ *      可观的来说其是8倍的1024 “DEFAULT_BUFFER_SIZE = 8192;”
  *           1.BufferInputStream
  *           2.BufferOutputStream
  *           3.BufferReader
@@ -42,7 +42,7 @@ public class BufferStreamTEST {
             int len;
             while ((len = B1.read(buf)) != -1) {
                 B2.write(buf, 0, len);
-//                B2.flush();//刷新缓冲区  在write里面已经有了
+//                B2.flush();//刷新缓冲区  在write()里面已经有了
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,6 +50,9 @@ public class BufferStreamTEST {
             //先关闭外层流 BufferedInputStream 与 BufferedOutputStream
             //再关闭内层流 FileInputStream 与 FileInputStream
             //且内层流会随着外层的关闭而关闭，所以只需关闭外层的流
+            //不要误以为 File类的流是先创建的就是外流，在md中的图中有提示到
+            //字节流跟字符流都是在“内层”传输的，节点流跟处理流是 “包住”字节流
+            //跟字符流的，这个有点 节点、处理流是外面的加速“管道”一样，会更快；
             if (B2 != null) {
                 try {
                     B2.close();
@@ -85,9 +88,10 @@ public class BufferStreamTEST {
 
            //readLine();一行一行的读：
             String data;
-            while ((data = B1.readLine()) != null){ //注意这里是不等于null
-                B2.write(data + "\n"); //自己加换行  或者加：
-//                B2.newLine();
+            while ((data = B1.readLine()) != null){ //readLine()中注意这里是不等于null
+                B2.write(data); //自己加换行符‘\n’
+                // 或者加：
+                B2.newLine();
             }
 
         } catch (IOException e) {
