@@ -18,32 +18,12 @@ import java.util.List;
  *    三者异同：
  *      同：三个类都实现了List接口；
  *          三者存储的数据特点都是存储有序，可重复的数据；
- *      异：如上述；
- *
- *      ArrayList 与 LinkList：区别：
- *          两个都是效率较高的线程不安全的数组操作；
- *          对于随机访问的set、get方法，基于动态数组结构的ArrayList更有优势，因为LinkList要移动指针。
- *          对于增删操作频繁的情况，基于链表结构的LinkList更有优势，因为ArrayList需要移动数据;
- *
- *      ArrayList 与 Vector 的区别：
- *          Vector是线程同步的，即线程安全的；
- *          但是Vector因此而开销较大，访问速度更慢；
- *          Vector的扩容是 2倍，ArrayList是 1.5倍；
- *
+ *      异：如上所述；
  *@author: RRW friend_rrw@163.com
  *@create: 2020-06-12 13:08
  */
 public class ListTest {
     @Test
-    /*
-        add()：添加元素，可以指定位置添加；
-        remove():删除元素，可指定位置删除
-        asList()：添加集合,在末尾添加 addAll（）
-        get(index):获取指定位置的元素
-        indexOf():返回集合中首次出现的元素的位置
-        set()： 将某个位置是的元素”改“为指定元素
-        subList(): 返回元素，指定从index1开始，到index2结束，不会影响源集合
-    */
     public void test1(){
         ArrayList list = new ArrayList();
         list.add(123);
@@ -72,7 +52,6 @@ public class ListTest {
         //List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex 位置的子集合
         List subList = list.subList(2, 4);
         System.out.println(subList); //不会对原本的list造成影响
-        System.out.println(list);
     }
     @Test  //小面试题：
     public void test2(){

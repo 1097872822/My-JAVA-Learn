@@ -29,8 +29,6 @@ public class IteratorTest {
 //        for (int i = 0; i < col2.size(); i++) {
 //            System.out.println(iterator.next());
 //        }
-
-        //在调用iterator.next()之前，必须先调用iterator.hashNext(),否则会NoSuchElementException
         while (iterator.hasNext()) { //判断里面还有没有元素
 //        while (iterator.next() != null) { //错误写法，返回123之后，跳过第二个返回；
             System.out.println(iterator.next());

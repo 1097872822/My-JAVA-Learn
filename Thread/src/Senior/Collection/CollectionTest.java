@@ -22,7 +22,6 @@ import java.util.*;
  */
 public class CollectionTest {
     @Test
-    // add、addAll、isEmpty、clean：方法
     public void test1(){
         Collection col = new ArrayList();
         //add(Object e)  将元素e添加到col集合中
@@ -45,10 +44,7 @@ public class CollectionTest {
         col1.clear();
         System.out.println(col1);
     }
-    @Test  //contains(注意new对象的重写equals方法前后对比)：是否含有某元素；
-           // containsAll：判断形参中的元素是否存在集合中；
-           // remove（removeAll）：删除某（几个）个元素；
-           // retainAll: 求交集
+    @Test
     public void test2(){
         Collection col2 = new ArrayList();
         col2.add(123);
@@ -68,7 +64,7 @@ public class CollectionTest {
 
         //containsAll(Collection obj):判断形参obj中所有的元素是否存在当前集合；
         System.out.println();
-        Collection col3 = Arrays.asList("RRW",123); //asList：集合
+        Collection col3 = Arrays.asList("RRW",123);
         System.out.println(col3.containsAll(col3)); //true 都有
 
         //remove(Object obj): 移除某个对象；
@@ -97,11 +93,9 @@ public class CollectionTest {
         //集合 ———> 数组  toArray()
         Object[] arr = col2.toArray();
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
+            System.out.println(arr[i]);
         }
-        System.out.println();
-
-        //数组 ——> 集合： asList()  {分<String>、<int[]>}
+        //数组 ——> 集合：
         List<String> strings = Arrays.asList("123", "rrw", new String("LQ"));
         System.out.println(strings); //[123, rrw, LQ]
 
@@ -169,7 +163,7 @@ class People implements Comparable<People>{  //test2的测试类
 
 
     //按名字从小到大排,年龄从大到小排；
-  /* @Override  //没有泛型时：
+  /*  @Override  没有泛型时：
     public int compareTo(Object o) {
         if (o instanceof People){
             People p2 = (People) o;

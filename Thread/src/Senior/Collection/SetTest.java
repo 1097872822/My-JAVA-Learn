@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  *@description: Set接口使用 (”Set是特殊的Map“)，一般不会问HashSet,而是问HashSet的底层HashMap；
  *              Set：元素无序，不可重复的集合； 类似“数学集合”
- *                Set不同于List,使用的都是Collection中声明的方法；
+ *                  Set不同于List,使用的都是Collection中声明的方法；
  *                HashSet：作为Set接口的主要实现类；线程不安全的；可以存储null；
  *                LinkedHashSet：作为HashSet的子类；遍历内部数据时，可以按照添加的顺序遍历；
  *                TreeSet：可以按照添加对象的指定属性进行排序；
