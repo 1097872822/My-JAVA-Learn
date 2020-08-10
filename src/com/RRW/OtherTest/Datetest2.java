@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAccessor;
 
@@ -49,6 +50,15 @@ public class Datetest2 {
         TemporalAccessor accessor = DATE.parse("2020-06-10 10:34:52");
         System.out.println(accessor);
 
+    }
+    @Test
+    public void test1(){
+        LocalDate startDate = LocalDate.of(2019, 8, 8);
+        LocalDate endDate = LocalDate.now();
+        Period period = Period.between(startDate, endDate);
+        System.out.println("日期间隔为:" + period); //日期间隔为:P7M6D
+        System.out.println("日期间隔为:" + period.getYears() + "年-"
+                + period.getMonths() + "月-" + period.getDays() + "日"); //日期间隔为...
     }
 
 }
